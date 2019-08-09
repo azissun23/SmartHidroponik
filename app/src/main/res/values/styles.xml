@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/skybiru</item>
+        <item name="colorPrimaryDark">@color/aquamarin</item>
+        <item name="colorAccent">@color/abuabu</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="colorPrimary">@color/skybiru</item>
+        <item name="colorPrimaryDark">@color/aquamarin</item>
+        <item name="colorAccent">@color/abuabu</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorPrimary">@color/skybiru</item>
+        <item name="colorPrimaryDark">@color/aquamarin</item>
+        <item name="colorAccent">@color/abuabu</item>
+    </style>
+    <string-array name="Nutrisi">
+        <item>50ml</item>
+        <item>100ml</item>
+        <item>150ml</item>
+        <item>200ml</item>
+    </string-array>
+    <string-array name="VolAir">
+        <item>10L</item>
+        <item>20L</item>
+        <item>30L</item>
+        <item>40L</item>
+    </string-array>
+</resources>

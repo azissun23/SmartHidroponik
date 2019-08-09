@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">SmartHidroponik</string>
+
+    <!--Title-->
+    <string name="login_title">Login</string>
+    <string name="register_title">Register</string>
+    <string name="nama_dev">Khoerul Budi Nur Azis</string>
+    <string name="nim_mahasiswa">2015-81-266</string>
+    <string name="jurusan">Teknik Infotmatika</string>
+    <string name="nama_kampus">UNIVERSITAS ESA UNGGUL</string>
+    <string name="jenis_tanaman">Jenis Tanaman Sayuran dan Buah</string>
+
+    <!--Welcome Message-->
+    <string name="splash_welcome_txt">Perancangan Instalasi Monitoring \nSistem Tanam Hidroponik \nmenggunakan Mikrokontroler \nWireless Sensor Network (WSN) Realtime Terintegrasi Android</string>
+    <string name="login_welcome_txt">Selamat Bekerja Cerdas</string>
+    <string name="moto">Karangtaruna RW 06\nUntuk Indonesia</string>
+
+    <!--Buttons Label-->
+    <string name="login_btn_label">Login</string>
+    <string name="register_btn_label">Register</string>
+    <string name="get_started_btn_label">Mulai</string>
+
+    <!--Edit Text Hint-->
+    <string name="email_address_hint">Email address</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="password_hint">Password</string>
+
+    <!--Misc Text-->
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="infoinputnutrisi">Input jika nutrisi ABMix tanaman berkurang</string>
+    <string name="no_account">Belum Punya Akun?\n Minta Sama Admin</string>
+    <string name="divider_or">OR</string>
+    <string name="title_activity_navigation">navigation</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Video Text-->
+    <string name="video_text">Hidroponik Sehat untuk Semua</string>
+
+</resources>

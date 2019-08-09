@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/trans_putih_rectangle"
+    style="@style/Theme.AppCompat.Light.NoActionBar">
+
+    <ImageView
+        android:id="@+id/imginfotanaman"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/tabeltahapan"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp" />
+
+    <TextView
+        android:id="@+id/txtnamatanaman"
+        android:background="@color/orangmuda"
+        android:layout_margin="5dp"
+        android:text="Nama Tanaman"
+        android:layout_below="@id/imginfotanaman"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/namatanaman"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/txtnamatanaman"
+        android:layout_margin="2dp"
+        android:gravity="center"
+        android:text="Nama Tanaman" />
+    <TextView
+        android:layout_below="@+id/namatanaman"
+        android:text="Kadar pH"
+        android:layout_margin="5dp"
+        android:background="@color/orangmuda"
+        android:id="@+id/textkadarph"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_below="@id/textkadarph"
+        android:text="pH"
+        android:layout_margin="2dp"
+        android:gravity="center"
+        android:id="@+id/pH_Air"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:text="PPM Maksimal"
+        android:layout_margin="5dp"
+        android:id="@+id/txtppmmaks"
+        android:layout_below="@id/pH_Air"
+        android:background="@color/orangmuda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/ppm_maksimum"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/txtppmmaks"
+        android:layout_margin="2dp"
+        android:gravity="center"
+        android:text="PPM Maks" />
+    <TextView
+        android:layout_margin="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/orangmuda"
+        android:id="@+id/stdrnutrisitanaman"
+        android:text="Standart Nutrisi Tanaman"
+        android:textSize="15sp"
+        android:layout_below="@id/ppm_maksimum"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:layout_marginRight="5dp"/>
+
+    <TableLayout
+        android:id="@+id/tblnutrisi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stdrnutrisitanaman"
+        android:layout_marginTop="1dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtusiapanen"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:text="Usia Panen" />
+
+            <TextView
+                android:text="Usia Panen"
+                android:id="@+id/usiapanen"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tblminggu1"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:text="Minggu 1" />
+
+            <TextView
+                android:id="@+id/minggu1"
+                android:text="PPM 1"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tblminggu2"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:text="Minggu 2" />
+
+            <TextView
+                android:id="@+id/minggu2"
+                android:text="PPM 2"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tblminggu3"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:text="Minggu 3" />
+            <TextView
+                android:id="@+id/minggu3"
+                android:text="PPM 3"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tblminggu4"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:text="Minggu 4" />
+
+            <TextView
+                android:id="@+id/minggu4"
+                android:text="PPM 4"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tblminggu6-8"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="5dp"
+                android:text="Minggu 6 - 8" />
+
+            <TextView
+                android:id="@+id/minggu6-8"
+                android:text="dipotong"
+                android:layout_width="150dp"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+    </TableLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="515dp">
+        <TextView
+            android:layout_margin="5dp"
+            android:text="KETERANGAN PANEN"
+            android:background="@color/orangmuda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text="Belum ada data"
+            android:id="@+id/ket_panen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CARA ISI NUTRISI"
+            android:layout_margin="5dp"
+            android:background="@color/orangmuda"/>
+
+        <TextView
+            android:id="@+id/caraisinutrisi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:text="isimutrisi" />
+    </LinearLayout>
+
+</RelativeLayout>

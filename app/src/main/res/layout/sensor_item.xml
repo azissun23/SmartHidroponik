@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/kdrpHAir"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="Kadar pH          ="
+            android:textColor="@color/hitam"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/hasilpH"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="201dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="pH Air"
+            android:textColor="@color/hitam"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_below="@id/hasilpH"
+            android:id="@+id/hasilnutrisi"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="201dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="Nutrisi"
+            android:textColor="@color/hitam"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:textColor="@color/hitam"
+            android:id="@+id/kdrNutrisi"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/hasilpH"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:text="Kadar Nutrisi   ="/>
+        <TextView
+            android:textColor="@color/hitam"
+            android:id="@+id/kdrvolair"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/hasilnutrisi"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:text="Kadar Volume Air   ="/>
+        <TextView
+            android:layout_below="@id/hasilnutrisi"
+            android:id="@+id/hasilvolair"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="201dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="Volair"
+            android:textColor="@color/hitam"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:layout_below="@id/kdrvolair"
+            android:id="@+id/txtinputnutrisi"
+            android:text="INPUT NUTRISI TANAMAN"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtinputnutrisi"
+            android:layout_marginTop="0dp"
+            android:text="@string/infoinputnutrisi" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
