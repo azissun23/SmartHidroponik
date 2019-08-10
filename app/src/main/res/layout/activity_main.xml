@@ -1,177 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="5dp"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Activity.MainActivity"
-    style="@style/Animation.AppCompat.Dialog">
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <HorizontalScrollView
-        android:layout_width="400dp"
-        android:layout_height="240dp"
-        android:id="@+id/scrollViewHorizontal">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/kangkung"
-                android:src="@drawable/kangkung"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/pakchoy"
-                android:src="@drawable/pakchoy"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/sawi"
-                android:src="@drawable/sawi"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/cabai"
-                android:src="@drawable/cabai"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/bayam"
-                android:src="@drawable/bayam"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/selada"
-                android:src="@drawable/selada"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/kailan"
-                android:src="@drawable/kailan"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/strawbery"
-                android:src="@drawable/strawbery"
-                android:layout_width="400dp"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </HorizontalScrollView>
-    <LinearLayout
-        android:layout_marginTop="240dp"
-        android:layout_alignParentStart="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentLeft="true">
-        <TextView
-            android:id="@+id/videotext"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:text="@string/video_text"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_marginTop="280dp"
-        android:background="@color/orangmuda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            style="@style/Animation.AppCompat.Dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:orientation="vertical"
-            android:background="@color/putih">
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/hitam"
-                android:textSize="20sp"
-                android:textStyle="normal"
-                android:text="Jenis Tanaman" />
+            android:layout_margin="5dp"
+            tools:context=".Activity.MainActivity">
 
-            <TextView
-                android:layout_width="230dp"
-                android:layout_height="27dp"
-                android:layout_marginLeft="10dp"
-                android:text="@string/jenis_tanaman" />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/monitortanaman"
-            android:gravity="center"
-            android:text="MONITORING TANAMAN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"/>
-    </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:layout_marginTop="380dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sensorset">
-    </android.support.v7.widget.RecyclerView>
-    <RelativeLayout
-        android:background="@color/orangmuda"
-        android:layout_marginTop="535dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Spinner
-            android:id="@id/spinernutrisia"
-            android:gravity="center_vertical"
-            android:layout_width="200dp"
-            android:entries="@array/Nutrisi"
-            android:layout_height="50dp" />
-        <Spinner
-            android:layout_marginLeft="200dp"
-            android:id="@id/spinernutrisib"
-            android:gravity="center"
-            android:entries="@array/Nutrisi"
-            android:layout_width="200dp"
-            android:layout_height="50dp" />
-        <Spinner
-            android:layout_below="@id/spinernutrisib"
-            android:id="@+id/spinerinputAir"
-            android:gravity="center"
-            android:layout_centerInParent="true"
-            android:entries="@array/VolAir"
-            android:layout_width="200dp"
-            android:layout_height="50dp" />
-        <Button
-            android:id="@+id/validasiinutrisi"
-            android:layout_below="@id/spinerinputAir"
-            android:layout_width="100dp"
-            android:layout_centerInParent="true"
-            android:text="INPUT"
-            android:textSize="20dp"
-            android:layout_height="50dp" />
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="right">
-        <Button
-            android:text="Info Tanaman"
-            android:id="@+id/btn_infotanaman"
-            tools:text="Info Tanaman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
-    </RelativeLayout>
-    </android.support.v4.widget.SwipeRefreshLayout>
-</RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <HorizontalScrollView
+                    android:id="@+id/scrollViewHorizontal"
+                    android:layout_width="400dp"
+                    android:layout_height="240dp">
+
+                    <LinearLayout
+                        android:layout_width="400dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/kangkung"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/kangkung" />
+
+                        <ImageView
+                            android:id="@+id/pakchoy"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pakchoy" />
+
+                        <ImageView
+                            android:id="@+id/sawi"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/sawi" />
+
+                        <ImageView
+                            android:id="@+id/cabai"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/cabai" />
+
+                        <ImageView
+                            android:id="@+id/bayam"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/bayam" />
+
+                        <ImageView
+                            android:id="@+id/selada"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/selada" />
+
+                        <ImageView
+                            android:id="@+id/kailan"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/kailan" />
+
+                        <ImageView
+                            android:id="@+id/strawbery"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/strawbery" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="240dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/videotext"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="@string/video_text"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="280dp"
+                    android:background="@color/orangmuda"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@color/putih"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Jenis Tanaman"
+                            android:textColor="@color/hitam"
+                            android:textSize="20sp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="230dp"
+                            android:layout_height="27dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/jenis_tanaman" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/monitortanaman"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:gravity="center"
+                        android:text="MONITORING TANAMAN" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/sensorset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="370dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="530dp"
+                    android:background="@color/orangmuda">
+
+                    <EditText
+                        android:id="@+id/validnutrisiA"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:entries="@array/Nutrisi"
+                        android:gravity="center"
+                        android:hint="Nutrisi A Satuan ml"
+                        android:inputType="textEmailAddress"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/validnutrisiB"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="200dp"
+                        android:gravity="center"
+                        android:hint="Nutrisi B Satuan ml"
+                        android:inputType="textEmailAddress"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/validasiAir"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/validnutrisiA"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:hint="Air Baku Satuan Liter"
+                        android:inputType="textEmailAddress"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/validasiinutrisi"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/validasiAir"
+                        android:layout_centerInParent="true"
+                        android:text="INPUT"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btn_infotanaman"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/validasiAir"
+                        android:text="Info Tanaman"
+                        tools:text="Info Tanaman" />
+
+                    <ToggleButton
+                        android:id="@+id/pompatandon"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/validasiAir"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:onClick="pompa"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="650dp"
+                    android:layout_marginBottom="3dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/keteranganinput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="KETERANGAN INPUT "
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/keterangan_input"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -18,7 +18,7 @@
             style="@style/LabelStyle"
             android:layout_marginTop="1dp"
             android:fontFamily="@font/sf_pro_display_medium"
-            android:text="Smart Hidroponik"
+            android:text="Smart Hidroponik Register"
             android:textSize="25dp"
             android:textColor="@color/hitam"/>
         <ImageView
@@ -81,10 +81,10 @@
             android:layout_marginTop="70dp"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:id="@+id/no_account"
+            android:id="@+id/loginregist"
             style="@style/LabelStyle"
             android:fontFamily="@font/sf_pro_display_medium"
-            android:text="@string/no_account"
+            android:text="LOGIN"
             android:textColor="@color/account"
             android:textSize="16sp"/>
     </LinearLayout>

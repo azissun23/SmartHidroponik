@@ -11,6 +11,9 @@
     <string name="jenis_tanaman">Jenis Tanaman Sayuran dan Buah</string>
 
     <!--Welcome Message-->
+    <string name="keterangan_input">Untuk Input Nutrisi ABMix dan Air Basa hanya bisa menggunakan variabel sebagai berikut: \nNutrisi ABMix : 25 ml, 50 ml, 75 ml, 100 ml
+        \nAir Basa : 5 L, 10 L, 15 L, 20 L
+        \nRumus Perhitungan Nutrisi untuk 1000ppm : 25 ml NA + 25 ml NB + 5 l Air</string>
     <string name="splash_welcome_txt">Perancangan Instalasi Monitoring \nSistem Tanam Hidroponik \nmenggunakan Mikrokontroler \nWireless Sensor Network (WSN) Realtime Terintegrasi Android</string>
     <string name="login_welcome_txt">Selamat Bekerja Cerdas</string>
     <string name="moto">Karangtaruna RW 06\nUntuk Indonesia</string>

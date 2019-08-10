@@ -1,9 +1,13 @@
 package com.example.khoerul.smarthidroponik.Activity;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -107,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             Log.d(TAG, "onResponse: user id "+userUrl.getIdUser());
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
                         }
                     }
                 } catch (JSONException e) {
@@ -124,6 +129,26 @@ public class LoginActivity extends AppCompatActivity {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
         requestQueue.add(stringRequest);
+        finish();
 
+    }
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Ingin Keluar Aplikasi?").setCancelable(false).setPositiveButton(
+                "Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        LoginActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
