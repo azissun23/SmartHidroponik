@@ -13,7 +13,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -25,6 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.khoerul.smarthidroponik.KeteranganPPMTanaman;
 import com.example.khoerul.smarthidroponik.R;
 import com.example.khoerul.smarthidroponik.Sensor;
 import com.example.khoerul.smarthidroponik.SensorAdapter;
@@ -50,16 +54,19 @@ public class MainActivity extends AppCompatActivity {
     Button infotanaman;
     @BindView(R.id.sensorset)
     RecyclerView sensorset;
+    Button keteranganppm;
     SensorAdapter adapter;
     private SwipeRefreshLayout refreshLayout;
     ToggleButton toggleButton;
+    CheckBox m100ppm, m200ppm, m500ppm, m1000ppm;
     private static final String URL = "http://hidroponik.96.lt/getalat.php";
-
-//    private Spinner spinernutria;
+    String Input="";
+    String InputTandon="";
 
     private EditText pomnutrisiA, pomnutrisiB, pomairBasa;
     private Button validinput;
-    private static String URL_POMPA = "http://hidroponik.96.lt/CONFIG/pompa.php";
+    private static String URL_POMPA = "http://hidroponik.96.lt/CONFIG/pompa.php?";
+    private static String URL_POMPA_Tandon = "http://hidroponik.96.lt/CONFIG/pompatandon.php";
 
 
     @SuppressLint("WrongViewCast")
@@ -69,20 +76,125 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 //        spinernutria = (Spinner)findViewById(R.id.validnutrisiA) ;
+        toggleButton = (ToggleButton) findViewById(R.id.pompatandon);
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked == true) {
+                    Toast.makeText(getBaseContext(), "Pompa Aktif",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getBaseContext(), "Pompa Mati",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-        pomnutrisiA = findViewById(R.id.validnutrisiA);
-        pomnutrisiB = findViewById(R.id.validnutrisiB);
-        pomairBasa = findViewById(R.id.validasiAir);
+        m100ppm = (CheckBox) findViewById(R.id.valid100ppm);
+        m200ppm = (CheckBox) findViewById(R.id.valid200ppm);
+        m500ppm = (CheckBox) findViewById(R.id.valid500ppm);
+        m1000ppm = (CheckBox) findViewById(R.id.valid1000ppm);
+
+//        pomnutrisiA = findViewById(R.id.validnutrisiA);
+//        pomnutrisiB = findViewById(R.id.validnutrisiB);
+//        pomairBasa = findViewById(R.id.validasiAir);
+
         validinput = findViewById(R.id.validasiinutrisi);
+
+         m100ppm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                 m200ppm.setChecked(false);
+                 m500ppm.setChecked(false);
+                 m1000ppm.setChecked(false);
+             }
+         });
+        m200ppm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                m100ppm.setChecked(false);
+                m500ppm.setChecked(false);
+                m1000ppm.setChecked(false);
+            }
+        });
+        m500ppm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                m100ppm.setChecked(false);
+                m200ppm.setChecked(false);
+                m1000ppm.setChecked(false);
+            }
+        });
+        m1000ppm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                m100ppm.setChecked(false);
+                m200ppm.setChecked(false);
+                m500ppm.setChecked(false);
+            }
+        });
+
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                URL_POMPA_Tandon = "http://hidroponik.96.lt/CONFIG/pompatandon.php";
+                if (isChecked){
+                    InputTandon="Pompa Aktif";
+                    URL_POMPA_Tandon+="PompaTandon=";
+                    URL_POMPA_Tandon+=URL_POMPA_Tandon;
+                    TandonPompa();
+                    Toast.makeText(MainActivity.this,URL_POMPA_Tandon,Toast.LENGTH_LONG).show();
+                }else if (Mati.isChecked()) {
+                    URL_POMPA_Tandon = "Pompa Mati";
+                    URL_POMPA_Tandon += "PompaTandon=";
+                    URL_POMPA_Tandon += URL_POMPA_Tandon;
+                    TandonPompa();
+                    Toast.makeText(MainActivity.this, URL_POMPA_Tandon, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
         validinput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                InputVAlidasi();
+                URL_POMPA="http://hidroponik.96.lt/CONFIG/pompa.php?";
+
+                if (m100ppm.isChecked()){
+                    Input="100ppm";
+                    URL_POMPA+="KadarPPM=";
+                    URL_POMPA+=Input;
+                    InputVAlidasi();
+                    Toast.makeText(MainActivity.this,Input,Toast.LENGTH_LONG).show();
+                }else if (m200ppm.isChecked()){
+                    Input="200ppm";
+                    URL_POMPA+="KadarPPM=";
+                    URL_POMPA+=Input;
+                    InputVAlidasi();
+                    Toast.makeText(MainActivity.this,Input,Toast.LENGTH_LONG).show();
+                }else if (m500ppm.isChecked()){
+                    Input="500ppm";
+                    URL_POMPA+="KadarPPM=";
+                    URL_POMPA+=Input;
+                    InputVAlidasi();
+                    Toast.makeText(MainActivity.this,Input,Toast.LENGTH_LONG).show();
+                }else if (m1000ppm.isChecked()){
+                    Input="1000ppm";
+                    URL_POMPA+="KadarPPM=";
+                    URL_POMPA+=Input;
+                    InputVAlidasi();
+                    Toast.makeText(MainActivity.this,Input,Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this,"Pilih PPM Terlebih Dahulu", Toast.LENGTH_SHORT).show();
+                }
+//                URL_POMPA+="KadarPPM=";
+//                URL_POMPA+=Input;
+
+//                InputVAlidasi();
+
             }
         });
 
-        toggleButton = (ToggleButton) findViewById(R.id.pompatandon);
+
 
         infotanaman = (Button) findViewById(R.id.btn_infotanaman);
         infotanaman.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +204,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        keteranganppm = (Button) findViewById(R.id.keteranganinput);
+        keteranganppm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, KeteranganPPMTanaman.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         refreshLayout = findViewById(R.id.swipe_refresh);
@@ -104,6 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 String url = "http://hidroponik.96.lt/getalat.php";
                 DemoAsync demoASync = new DemoAsync();
                 demoASync.execute(url);
+
             }
         });
 
@@ -115,22 +237,15 @@ public class MainActivity extends AppCompatActivity {
         demoASync.execute(url);
     }
 
-    private void InputVAlidasi() {
-//        validinput.setVisibility(View.GONE);
-
-
-        final String pomnutrisiA = this.pomnutrisiA.getText().toString().trim();
-        final String pomnutrisiB = this.pomnutrisiB.getText().toString().trim();
-        final String pomairBasa = this.pomairBasa.getText().toString().trim();
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_POMPA,
+    private void TandonPompa() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_POMPA_Tandon,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
-                            String succes = jsonObject.getString("success");
-                            if (succes.equals("1")) {
+                            String success = jsonObject.getString("success");
+                            if (success.equals("1")) {
                                 Toast.makeText(MainActivity.this, "Input Berhasil", Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
@@ -147,17 +262,58 @@ public class MainActivity extends AppCompatActivity {
                         validinput.setVisibility(View.VISIBLE);
                     }
                 }) {
+
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                Log.d("test put", "getParams: " + pomnutrisiA);
-                params.put("pomnutrisiA", pomnutrisiA);
-                Log.d("Test A", "getParams: " + pomnutrisiA);
-                params.put("pomnutrisiB", pomnutrisiB);
-                Log.d("Test B", "getParams: " + pomnutrisiB);
-                params.put("pomairBasa", pomairBasa);
-                Log.d("Test C", "getParams: " + pomairBasa);
-                return params;
+                Map<String, String> Params = new HashMap<>();
+                Params.put("URL_POMPA_Tandon", URL_POMPA_Tandon);
+                return Params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+
+    private void InputVAlidasi() {
+//        validinput.setVisibility(View.GONE);
+
+
+//        final String m100ppm = this.m100ppm.getText().toString().trim();
+//        final String m200ppm = this.m200ppm.getText().toString().trim();
+//        final String m500ppm = this.m500ppm.getText().toString().trim();
+//        final String m1000ppm = this.m1000ppm.getText().toString().trim();
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_POMPA,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String success = jsonObject.getString("success");
+                            if (success.equals("1")) {
+                                Toast.makeText(MainActivity.this, "Input Berhasil", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(MainActivity.this, "Input Gagal!!!", Toast.LENGTH_SHORT).show();
+                            validinput.setVisibility(View.VISIBLE);
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(MainActivity.this, "Input Gagal!!!", Toast.LENGTH_SHORT).show();
+                        validinput.setVisibility(View.VISIBLE);
+                    }
+                }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> Params = new HashMap<>();
+                Params.put("KadarPPM", Input);
+                return Params;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -186,12 +342,15 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+
     public void pompa(View view) {
         if (toggleButton.isChecked())
+
             Toast.makeText(this, "Pompa Aktif", Toast.LENGTH_LONG).show();
         else
             Toast.makeText(this, "Pompa Mati", Toast.LENGTH_LONG).show();
     }
+
 
 
     public class DemoAsync extends AsyncTask<String, Void, ArrayList<Sensor>> {

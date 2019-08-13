@@ -44,4 +44,8 @@
     <!--Video Text-->
     <string name="video_text">Hidroponik Sehat untuk Semua</string>
 
+    <string name="kadarppm200">Campuran 1ml nutrisi A + 1ml Nutrisi B + 1Liter Air Baku \nAkan di dapatkan 1 Liter Air Nutrisi bernilai 200 ppm</string>
+    <string name="kadarppm500">Campuran 2,5ml nutrisi A + 2,5ml Nutrisi B + 1Liter Air Baku \nAkan di dapatkan 1 Liter Air Nutrisi bernilai 500 ppm</string>
+    <string name="kadarppm1000">Campuran 5ml nutrisi A + 5ml Nutrisi B + 1Liter Air Baku \nAkan di dapatkan 1 Liter Air Nutrisi bernilai 1000 ppm</string>
+    <string name="kadarppm100">Campuran 0,5ml nutrisi A + 0,5ml Nutrisi B + 1Liter Air Baku \nAkan di dapatkan 1 Liter Air Nutrisi bernilai 100 ppm</string>
 </resources>

@@ -154,42 +154,46 @@
                     android:layout_marginTop="530dp"
                     android:background="@color/orangmuda">
 
-                    <EditText
-                        android:id="@+id/validnutrisiA"
+                    <CheckBox
+                        android:id="@+id/valid100ppm"
                         android:layout_width="200dp"
                         android:layout_height="40dp"
-                        android:entries="@array/Nutrisi"
                         android:gravity="center"
-                        android:hint="Nutrisi A Satuan ml"
-                        android:inputType="textEmailAddress"
+                        android:text="100ppm"
                         android:textSize="14sp" />
 
-                    <EditText
-                        android:id="@+id/validnutrisiB"
+                    <CheckBox
+                        android:id="@+id/valid200ppm"
                         android:layout_width="200dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="200dp"
                         android:gravity="center"
-                        android:hint="Nutrisi B Satuan ml"
-                        android:inputType="textEmailAddress"
+                        android:text="200ppm"
                         android:textSize="14sp" />
 
-                    <EditText
-                        android:id="@+id/validasiAir"
+                    <CheckBox
+                        android:gravity="center"
+                        android:text="500ppm"
+                        android:id="@+id/valid500ppm"
                         android:layout_width="200dp"
                         android:layout_height="40dp"
-                        android:layout_below="@id/validnutrisiA"
-                        android:layout_centerInParent="true"
+                        android:layout_below="@id/valid100ppm"
+                        android:textSize="14sp" />
+                    <CheckBox
+                        android:layout_below="@+id/valid100ppm"
+                        android:id="@+id/valid1000ppm"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="200dp"
                         android:gravity="center"
-                        android:hint="Air Baku Satuan Liter"
-                        android:inputType="textEmailAddress"
+                        android:text="1000ppm"
                         android:textSize="14sp" />
 
                     <Button
                         android:id="@+id/validasiinutrisi"
                         android:layout_width="100dp"
                         android:layout_height="40dp"
-                        android:layout_below="@+id/validasiAir"
+                        android:layout_below="@+id/valid500ppm"
                         android:layout_centerInParent="true"
                         android:text="INPUT"
                         android:textSize="12sp" />
@@ -198,7 +202,7 @@
                         android:id="@+id/btn_infotanaman"
                         android:layout_width="130dp"
                         android:layout_height="40dp"
-                        android:layout_below="@id/validasiAir"
+                        android:layout_below="@id/valid500ppm"
                         android:text="Info Tanaman"
                         tools:text="Info Tanaman" />
 
@@ -206,35 +210,22 @@
                         android:id="@+id/pompatandon"
                         android:layout_width="130dp"
                         android:layout_height="40dp"
-                        android:layout_below="@id/validasiAir"
+                        android:layout_below="@id/valid500ppm"
                         android:layout_alignParentRight="true"
                         android:gravity="center"
                         android:onClick="pompa"
                         android:textSize="10sp" />
+                    <Button
+                        android:layout_centerInParent="true"
+                        android:text="Keterangan Input"
+                        android:id="@+id/keteranganinput"
+                        android:layout_below="@+id/validasiinutrisi"
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        tools:text="Keterangan Input"/>
                 </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="650dp"
-                    android:layout_marginBottom="3dp"
-                    android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/keteranganinput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="KETERANGAN INPUT "
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/keterangan_input"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
             </RelativeLayout>
 
         </RelativeLayout>

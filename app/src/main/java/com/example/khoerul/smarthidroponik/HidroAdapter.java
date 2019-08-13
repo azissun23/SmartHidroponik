@@ -39,7 +39,7 @@ public class HidroAdapter extends RecyclerView.Adapter<HidroAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.hidro_item,viewGroup,false);
         return new ViewHolder(view);
-    }
+}
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {

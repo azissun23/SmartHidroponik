@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".KeteranganPPMTanaman">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Keterangan Rumus Input Nutrisi"
+            android:id="@+id/txtKeteranganInput"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_gravity="center"
+            android:background="@color/skybiru"
+            android:layout_width="200dp"
+            android:layout_height="5dp"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtkadar100ppm"
+                android:text="Kadar PPM 100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/kadarppm100"
+                android:id="@+id/ket100ppm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="@color/skybiru"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtkadar200ppm"
+                android:text="Kadar PPM 200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/kadarppm200"
+                android:id="@+id/ket200ppm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="@color/skybiru"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtkadar500ppm"
+                android:text="Kadar PPM 500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/kadarppm500"
+                android:id="@+id/ket500ppm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="@color/skybiru"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/txtkadar1000ppm"
+                android:text="Kadar PPM 1000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/kadarppm1000"
+                android:id="@+id/ket1000ppm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="@color/skybiru"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
